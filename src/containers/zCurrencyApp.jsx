@@ -33,9 +33,9 @@ export class CurrencyApp extends React.Component {
     handleCloseFilter() {
         this.setState({ filter_open: false });
     }
-    handleApplyFilter() {
-        localStorage.setItem('filter', jsonStringify(this.fltDlg.state.filter));
-        this.setState({ filter_open: false, filter: this.fltDlg.state.filter });
+    handleApplyFilter(filter) {
+        localStorage.setItem('filter', jsonStringify(filter));
+        this.setState({ filter_open: false, filter: filter});
     }
 
     handleChangeFltDt(event, date) {

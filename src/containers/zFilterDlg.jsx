@@ -124,6 +124,10 @@ export default class FilterDlg extends React.Component {
         this.setState({filter: this.props.filter});
     }
 
+    handleOnOk() {
+        this.props.onOk(this.state.filter);
+    }
+
     render() {
         const actions = [
             <FlatButton
@@ -135,7 +139,7 @@ export default class FilterDlg extends React.Component {
                 label="Ok"
                 primary={true}
                 keyboardFocused={true}
-                onClick={this.props.onOk}
+                onClick={this.handleOnOk.bind(this)}
             />,
         ];
 
